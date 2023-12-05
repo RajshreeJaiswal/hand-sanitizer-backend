@@ -8,7 +8,7 @@ const authentication = (req, res, next) => {
   }
   const token = authToken.split(" ")[1];
 
-  jwt.verify(token, process.env.secretToken, function (err, decoded) {
+  jwt.verify(token, 12345, function (err, decoded) {
     if (err) {
       return res.json({ status: "Please Login First" });
     } else {
