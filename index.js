@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use("/user", userController);
 
-app.use(authentication);
+// app.use(authentication);
 
 app.use("/handcare", productController);
 app.use("/user", userDetailsController);

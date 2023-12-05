@@ -9,7 +9,7 @@ const productController = express.Router();
 productController.get("/", async (req, res) => {
   let products = [];
 
-  const { sortBy, order, page, limit, category, brand, title, q } = req.query;
+  const { sortBy, order, page, limit, category, brand, name, q } = req.query;
   const skipDataForPagination = (page - 1) * limit;
   const searchQuery = q;
 
@@ -58,7 +58,7 @@ productController.get("/", async (req, res) => {
       return res.json({ status: "success", data: products });
     }
   }
-  else if (title && order && sortBy) {
+  else if (name && order && sortBy) {
     if (order === "asc") {
       products = await ProductsModel.find({ name: name }).sort({
         [sortBy]: 1,
@@ -102,8 +102,8 @@ productController.get("/", async (req, res) => {
   } else if (brand) {
     products = await ProductsModel.find({ brand: brand });
     return res.json({ status: "All products are here", data: products });
-  } else if (title) {
-    products = await ProductsModel.find({ title: title });
+  } else if (name) {
+    products = await ProductsModel.find({ name: name });
     return res.json({ status: "All products are here", data: products });
   } else {
     products = await ProductsModel.find();
