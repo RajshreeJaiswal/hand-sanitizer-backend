@@ -5,7 +5,7 @@
 <h3>hand-sanitizer-backend is the server-side component of the HAAN hand care project, providing APIs for user authentication, product management, and user address details. The backend is built using Node.js, Express, and MongoDB.</h3>
 
 
- # Url --->   https://haan-hand-care.onrender.com/
+ # Url --->   https://haan-hand-cares.onrender.com/
 
 
 # Table of Contents
