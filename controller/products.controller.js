@@ -127,7 +127,7 @@ productController.get("/:category", async (req, res) => {
   } else {
     res.json({ status: "Invalid Request No Data Found", data: products });
   }
-});
+}); 
 
 productController.post("/carts/:id",async(req,res)=>{
   const cartId = req.params.id;

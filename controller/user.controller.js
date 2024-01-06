@@ -40,7 +40,7 @@ userController.post("/login", async (req, res) => {
       if (err || !result) {
         return json({ status: "User not Logged in" });
       }
-      const token = jwt.sign({ userId: user._id }, 12345);
+      const token = jwt.sign({ userId: user._id }, "12345");
       res.json({
         status: "User Logged in SuccessFully",
         userIs: name,
